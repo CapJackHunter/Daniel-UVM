@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Gráfico de Barras - Acceso a Servicios de Salud</title>
+<!-- Incluye la librería de Google Charts -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  // Carga la librería de visualización y los paquetes necesarios
+  google.charts.load('current', {'packages':['corechart']});
+  
+  // Dibuja el gráfico cuando la librería está cargada
+  google.charts.setOnLoadCallback(drawChart);
+  
+  function drawChart() {
+    // Define los datos del gráfico
+    var data = google.visualization.arrayToDataTable([
+      ['Año', 'Porcentaje'],
+      ['2008', 64.0],
+      ['2018', 83.0]
+    ]);
+
+    // Configura las opciones del gráfico
+    var options = {
+      title: 'Acceso a Servicios de Salud (2008 vs 2018)',
+      hAxis: {
+        title: 'Año'
+      },
+      vAxis: {
+        title: 'Porcentaje',
+        minValue: 0,
+        maxValue: 100
+      }
+    };
+
+    // Crea una instancia del gráfico de barras y lo dibuja en el elemento con id 'chart_div'
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+</head>
+<body>
+<!-- Elemento donde se dibujará el gráfico -->
+<div id="chart_div" style="width: 100%; height: 400px;"></div>
+</body>
+</html>

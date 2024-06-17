@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Distribución de la Pobreza por Entidad Federativa (2018)</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      // Cargar la librería de Google Charts
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Función para dibujar el gráfico
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Entidad Federativa', 'Porcentaje de Población en Pobreza'],
+          ['Aguascalientes', 26.2],
+          ['Baja California', 22.2],
+          ['Baja California Sur', 18.6],
+          ['Campeche', 46.2],
+          ['Coahuila', 23.1],
+          ['Colima', 30.2],
+          ['Chiapas', 76.4],
+          ['Chihuahua', 31.2],
+          ['Ciudad de México', 28.4],
+          ['Durango', 34.5],
+          ['Guanajuato', 40.4],
+          ['Guerrero', 66.5],
+          ['Hidalgo', 50.6],
+          ['Jalisco', 27.8],
+          ['México', 41.8],
+          ['Michoacán', 46.4],
+          ['Morelos', 50.8],
+          ['Nayarit', 39.8],
+          ['Nuevo León', 18.3],
+          ['Oaxaca', 66.4],
+          ['Puebla', 58.9],
+          ['Querétaro', 27.6],
+          ['Quintana Roo', 30.8],
+          ['San Luis Potosí', 45.4],
+          ['Sinaloa', 32.3],
+          ['Sonora', 27.0],
+          ['Tabasco', 53.6],
+          ['Tamaulipas', 31.4],
+          ['Tlaxcala', 51.0],
+          ['Veracruz', 61.8],
+          ['Yucatán', 41.9],
+          ['Zacatecas', 46.8]
+        ]);
+
+        var options = {
+          title: 'Distribución de la Pobreza por Entidad Federativa (2018)',
+          chartArea: {width: '50%'},
+          hAxis: {
+            title: 'Porcentaje de Población en Pobreza',
+            minValue: 0
+          },
+          vAxis: {
+            title: 'Entidad Federativa'
+          }
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('bar_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="bar_chart" style="width: 100%; height: 800px;"></div>
+  </body>
+</html>
